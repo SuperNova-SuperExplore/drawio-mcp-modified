@@ -20,8 +20,15 @@ import { registerSetActiveLayerTool } from "./set-active-layer.js";
 import { registerSetCellDataTool } from "./set-cell-data.js";
 import { registerSetCellParentTool } from "./set-cell-parent.js";
 import { registerSetCellShapeTool } from "./set-cell-shape.js";
+// ═══ REX CUSTOM TOOLS ═══
+import { registerGenerateFromJsonTool } from "./generate-from-json.js";
+import { registerFloorPlanTool } from "./generate-floor-plan.js";
+import { registerMindMapTool } from "./generate-mind-map.js";
+import { registerTemplateTool } from "./generate-from-template.js";
+import { registerThemeTools } from "./theme-engine.js";
 
 const registrars: ToolRegistrar[] = [
+  // Original tools
   registerGetSelectedCellTool,
   registerAddRectangleTool,
   registerAddEdgeTool,
@@ -43,6 +50,12 @@ const registrars: ToolRegistrar[] = [
   registerCreateLayerTool,
   registerExportDiagramTool,
   registerImportDiagramTool,
+  // ═══ REX CUSTOM TOOLS ═══
+  registerGenerateFromJsonTool,
+  registerFloorPlanTool,
+  registerMindMapTool,
+  registerTemplateTool,
+  registerThemeTools,
 ];
 
 export function registerTools(...args: Parameters<ToolRegistrar>) {
